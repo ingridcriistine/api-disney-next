@@ -1,5 +1,23 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
+
+    rewrites: () => {
+        return [
+            {
+                source: "/",
+                destination: "/home",
+            },
+            {
+              source: "/pagina-com-fetch",
+              destination: "/fetch-page"
+            },
+            {
+                source: "/pagina-com-axios",
+                destination: "/axios-page"
+            }
+        ]
+    },
 
     images: {
         remotePatterns: [
