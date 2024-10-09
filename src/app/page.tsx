@@ -33,8 +33,7 @@ const FetchPage = () => {
                     return (
                         <div key={item._id} className="bg-white rounded m-4 text-black w-[250px] flex flex-col items-center justify-center]">
                             <h2 className="p-4 font-semibold">{item.name}</h2>
-                            <img className="w-[200px] h-[250px] mb-6 rounded" src={item.imageUrl} width={200} height={250} alt="foto"/>
-                            {/* <Image className="w-[200px] h-auto mb-6 rounded" src={item.imageUrl} width={64} height={64} alt="foto" priority/> */}
+                            <Image className="w-[200px] h-auto mb-6 rounded" src={item.imageUrl} width={64} height={64} alt="foto" priority/> 
                         </div>
                     )
                 })}
