@@ -17,6 +17,8 @@ const Perso = async ({params: {_id}} : IPerso) => {
     const res = await fetch(`https://api.disneyapi.dev/character/:${_id}`)
     const data: IData = await res.json()
 
+    console.log(data);
+
     return(
         <div>
             <h1>{data._id}</h1>

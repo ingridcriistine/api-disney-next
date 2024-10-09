@@ -26,7 +26,7 @@ const ServerSide = async () => {
                         return(
                             <div key={item._id}>
                                 <h2>{item.name}</h2>
-                                <Link href={`/perso/${item._id}`}>ABRIR</Link>
+                                <Link href={`/perso/:${item._id}`}>ABRIR</Link>
                             </div>
                         )
                     })}

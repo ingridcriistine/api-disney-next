@@ -24,7 +24,7 @@ const AxiosPage = () => {
         if(local){
             setData(JSON.parse(local))
         }else{
-            api.get(`/character?page=${page}`)
+            api.get(`/character?page=${page}&name=${search}`)
             // api.get(`/character/?page=${page}&name=${name}`).then((res) => {
             .then((res) => {
                 setData(res.data.data);
@@ -44,7 +44,7 @@ const AxiosPage = () => {
             //     console.log(res.data)
             //     setData(undefined);
             // }
-    }, [page, name])
+    }, [page])
 
     return(
         <div className="bg-gray-900 text-white">
@@ -53,17 +53,21 @@ const AxiosPage = () => {
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Pesquise um nome" className="text-black m-4 pl-2"/>
             <div className=" pt-10 pb-20 flex row flex-wrap justify-center">
                 {erro && <h5>{errorMessage}</h5>}
+
                 {data.map((item, index) => {
                     {if(item.name.toLowerCase().includes(search.toLowerCase()))  
                         return(
                             <div key={item._id} className="bg-white rounded m-4 text-black w-[250px] flex flex-col items-center justify-center]">
                                 <h2>{item.name}</h2>
-                                <Image className="w-[200px] h-[250px]" src={item.imageUrl} width={100} height={100} alt="imagem" priority/> 
+                                <img className="w-[200px] h-[250px]" src={item.imageUrl} width={100} height={100} alt="imagem" /> 
                                 <br/><br/>
                             </div>
                         )
                     }
                 })}
+
+
+
             </div>
         </div>
     )
